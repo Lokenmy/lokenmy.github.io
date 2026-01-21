@@ -39,7 +39,7 @@ header {
 }
 #skills {
     padding: 60px 0;
-    background: #ececec; /* Un gris très léger pour différencier de la section blanche */
+    background: #ececec; 
 }
 
 #services h2, #skills h2 {
@@ -101,18 +101,18 @@ footer {
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Soulève la carte */
-    box-shadow: 0 10px 20px rgba(0, 209, 178, 0.2); /* Ajoute une lueur ta couleur primary */
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 20px rgba(0, 209, 178, 0.2); 
 }
 
-/* Animation pour le bouton */
+
 .btn {
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
     background: #00b89c;
-    transform: scale(1.05); /* Grossit légèrement le bouton */
+    transform: scale(1.05); 
 }
 html{
     scroll-behavior: smooth;
@@ -142,7 +142,7 @@ html{
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 209, 178, 0); }
 }
 
-/* REMPLACE TON BLOC MEDIA PAR CELUI-CI */
+
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem; /* Réduit la marge sur les côtés sur mobile */
@@ -156,8 +156,8 @@ html{
     }
 
     .hero-image img {
-        width: 100%; /* L'image s'adapte à la largeur du téléphone */
-        max-width: 300px; /* Mais elle ne devient pas géante */
+        width: 100%; 
+        max-width: 300px; 
         margin: 0 auto;
     }
 
@@ -176,8 +176,9 @@ html{
     }
     
     .grid {
-        grid-template-columns: 1fr; /* Force une seule colonne sur mobile */
+        grid-template-columns: 1fr; 
     }
 }
 }
+
 
