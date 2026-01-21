@@ -142,29 +142,42 @@ html{
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 209, 178, 0); }
 }
 
-/* Adaptations pour Mobile (écrans de moins de 768px) */
+/* REMPLACE TON BLOC MEDIA PAR CELUI-CI */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1rem; /* Réduit la marge sur les côtés sur mobile */
+    }
+
     .hero {
-        flex-direction: column-reverse; /* Met l'image au-dessus du texte sur mobile */
+        flex-direction: column-reverse; 
         text-align: center;
-        padding: 40px 0;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .hero-image img {
+        width: 100%; /* L'image s'adapte à la largeur du téléphone */
+        max-width: 300px; /* Mais elle ne devient pas géante */
+        margin: 0 auto;
     }
 
     .hero-text h1 {
-        font-size: 2rem; /* Réduit un peu la taille du titre */
+        font-size: 1.8rem;
     }
 
     nav .container {
-        flex-direction: column; /* Aligne le logo et le menu verticalement */
-        gap: 10px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     nav ul {
         padding: 0;
+        justify-content: center;
     }
-
-    nav ul li {
-        margin: 0 10px;
+    
+    .grid {
+        grid-template-columns: 1fr; /* Force une seule colonne sur mobile */
     }
-
 }
+}
+
