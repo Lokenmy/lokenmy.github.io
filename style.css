@@ -57,7 +57,7 @@ header {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     max-width: 500px;
-    width: 200%;
+    width: 100%;
     height: auto;
 }
 
@@ -166,4 +166,5 @@ html{
     nav ul li {
         margin: 0 10px;
     }
+
 }
