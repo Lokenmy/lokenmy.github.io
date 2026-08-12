@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="author" content="Jude Lokenmy Joseph" />
+  <title>Gallery — Jude Lokenmy Joseph</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header small">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jude Lokenmy Joseph</a>
+      <nav class="site-nav"><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="gallery.html">Gallery</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container">
+      <h1>Graphic Design Gallery</h1>
+      <p class="muted">Drop images into gallery/images and run <code>generate-gallery.ps1</code> to update the gallery automatically.</p>
+
+      <div id="gallery" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lb-close" class="lb-close" aria-label="Close">✕</button>
+    <img id="lb-img" src="" alt="" />
+    <p id="lb-caption"></p>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container"><p>© 2026 Jude Lokenmy Joseph</p></div>
+  </footer>
+
+  <script>
+  // load gallery list and build grid with click-to-open lightbox
+  fetch('gallery-list.json')
+    .then(r => r.json())
+    .then(list => {
+      const container = document.getElementById('gallery');
+      if (!list || !list.length) {
+        container.innerHTML = '<p>No images yet. Add files to gallery/images and run the generator.</p>';
+        return;
+      }
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card gallery-card';
+        const img = document.createElement('img');
+        img.src = item.path;
+        img.alt = item.name;
+        card.appendChild(img);
+        const caption = document.createElement('p');
+        caption.textContent = item.name;
+        card.appendChild(caption);
+        card.addEventListener('click', () => openLightbox(item));
+        container.appendChild(card);
+      });
+    })
+    .catch(err => { console.error(err); document.getElementById('gallery').innerHTML = '<p>Unable to load gallery.</p>'; });
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCaption = document.getElementById('lb-caption');
+  const lbClose = document.getElementById('lb-close');
+  function openLightbox(item) {
+    lbImg.src = item.path; lbImg.alt = item.name; lbCaption.textContent = item.name; lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+  }
+  function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLightbox(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="author" content="Jude Lokenmy Joseph" />
+  <title>Jude Lokenmy Joseph — Web Developer & Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Jude Lokenmy Joseph</a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Hello — I'm Jude Lokenmy Joseph</h1>
+          <p class="lead">Web developer & creative designer. I build fast, accessible, and appealing websites, and craft visual identities and motion content that communicate clearly.</p>
+          <div class="hero-cta">
+            <a class="btn" href="projects.html">View Projects</a>
+            <a class="btn ghost" href="gallery.html">View Gallery</a>
+          </div>
+        </div>
+        <div class="hero-aside">
+          <div class="card feature-card">
+            <h4>Featured Project</h4>
+            <p class="muted">HTI1804.bond — full site build (frontend & design)</p>
+            <a class="btn small" href="https://hti1804.bond" target="_blank" rel="noopener">Open Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="grid">
+          <div class="card">
+            <h3>About</h3>
+            <p>I design and code web experiences focused on performance, accessibility, and clear visual communication. Experienced in HTML/CSS, JS, graphic design and video editing.</p>
+          </div>
+          <div class="card">
+            <h3>Services</h3>
+            <ul>
+              <li>Website development (responsive)</li>
+              <li>Graphic design & branding</li>
+              <li>Video editing & motion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-light">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <h4>HTI1804.bond</h4>
+            <p>Complete frontend build — responsive layout, performance optimizations, and design polish.</p>
+            <a class="btn small" href="https://hti1804.bond" target="_blank" rel="noopener">Open</a>
+          </div>
+          <div class="card">
+            <h4>Project Template</h4>
+            <p>Reusable project layout and CMS-friendly structure for quick deployments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-dark">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Email: <a href="mailto:lokenmyjoseph509@gmail.com">lokenmyjoseph509@gmail.com</a></p>
+        <p class="muted">Phone: +79939056038</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jude Lokenmy Joseph • Built with care</p>
+    </div>
+  </footer>
+
+  <script>
+    // mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+    navToggle && navToggle.addEventListener('click', () => {
+      siteNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
